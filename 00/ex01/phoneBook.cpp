@@ -2,10 +2,7 @@
 
 void	Contact::draw_contact()
 {
-	std::vector<std::string>::iterator it;
-	for (it=my_contact.begin();it!=my_contact.end();it++)
-		std::cout<<"|"<<(*it);
-	std::cout<<"|"<std::endl;
+
 }
 
 void	PhoneBook::new_contact(Contact new_contact)
@@ -29,14 +26,24 @@ void	PhoneBook::draw_phonebook()
 int main ( )
 {
 	PhoneBook	my_phonebook();
-	std::string cmd();
-	std::vector<std::string> new_contact;
+	std::string cmd;
+	
 	while (1)
 	{
-		std::cout<<"[ADD]\t[SEARCH]\t[EXIT]"<<std::endl;
-		std::cin>>cmd;
-		if ()
+		std::cout << "[ADD]\t[SEARCH]\t[EXIT]" << std::endl;
+		std::cin >> cmd;
+		if (cmd == "ADD")
+		{
 
+		}
+		else if (cmd == "SEARCH")
+		{
+
+		}
+		else if (cmd == "EXIT")
+			break;
+		else
+			continue;
 	}
 
 }

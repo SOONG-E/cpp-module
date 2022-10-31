@@ -10,7 +10,7 @@ typedef	enum{
 class Contact
 {
 	private:
-		std::string		contact[5];
+		std::string my_contact[5];
 		contact_member	contact_mem;
 
 	public:
