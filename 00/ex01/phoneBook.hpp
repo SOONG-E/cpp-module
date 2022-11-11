@@ -3,20 +3,6 @@
 
 #include <iostream>
 
-typedef	enum{
-	first_name, last_name, nickname, phone_number, darkest_secret
-} contact_member;
-
-class Contact
-{
-	private:
-		std::string my_contact[5];
-		contact_member	contact_mem;
-
-	public:
-		void	draw_contact(void);
-};
-
 class PhoneBook
 {
 private:
@@ -38,11 +24,4 @@ phoneBook::~phoneBook()
 {
 }
 
-
-
-		// std::string		first_name; 
-		// std::string		last_name;
-		// std::string		nickname;
-		// std::string		phone_number;
-		// std::string		darkest_secret;
 #endif

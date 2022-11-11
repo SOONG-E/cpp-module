@@ -2,7 +2,6 @@
 
 void	Contact::draw_contact()
 {
-
 }
 
 void	PhoneBook::new_contact(Contact new_contact)
