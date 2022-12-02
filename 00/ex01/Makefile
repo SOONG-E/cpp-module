@@ -1,19 +1,22 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 
-SRCS = phonebook.cpp	\
-	contact.cpp
+SRCS =	phoneBook.cpp	\
+		contact.cpp		\
+		utils.cpp		\
+		main.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
-all : phonebook
+all : phoneBook
 
-phonebook : $(OBJS)
+phoneBook : $(OBJS)
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) phonebook
+	@$(RM) phoneBook
 
 re : fclean
 	$(MAKE) all
