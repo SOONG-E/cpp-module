@@ -1,26 +1,43 @@
-#include "contact.hpp"
+#include "phoneBook.h"
 
-int	Contact::add_first_name(std::string first_name){
+int	Contact::set_first_name(std::string first_name){
+	if (!first_name.std::string::length())
+		return (1);
 	this->first_name = first_name;
-	return (1);
+	return (0);
 }
 
-int	Contact::add_last_name(std::string last_name){
+int	Contact::set_last_name(std::string last_name){
+	if (!last_name.std::string::length())
+		return (1);
 	this->last_name = last_name;
-	return (1);
+	return (0);
 }
 
-int	Contact::add_nickname(std::string nickname){
+int	Contact::set_nickname(std::string nickname){
+	if (!nickname.std::string::length())
+		return (1);
 	this->nickname = nickname;
-	return (1);
+	return (0);
 }
 
-int Contact::add_phone_number(int phone_number){
+int Contact::set_phone_number(std::string phone_number){
+	if (!phone_number.std::string::length())
+		return (1);
+	else if (is_all_digit(phone_number))
+		return (1);
 	this->phone_number = phone_number;
-	return (1);
+	return (0);
 }
 
-int Contact::add_darkest_secret(std::string darkest_secret){
+int Contact::set_darkest_secret(std::string darkest_secret){
+	if (!darkest_secret.std::string::length())
+		return (1);
 	this->darkest_secret = darkest_secret;
-	return (1);
+	return (0);
+}
+//배열로 바꿀까?!!!!!!!!?!?!?!?!?!?!!?!?!??!?!?!!?!?!?
+
+void	show_contact(){
+
 }

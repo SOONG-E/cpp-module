@@ -9,16 +9,17 @@ class Contact
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;
-		int			phone_number;
+		std::string	phone_number;
 		std::string	darkest_secret;
 
 	public:
-		int	add_first_name(std::string first_name);
-		int	add_last_name(std::string last_name);
-		int	add_nickname(std::string nickname);
-		int add_phone_number(int phone_number);
-		int add_darkest_secret(std::string darkest_secret);
-		Contact();
+		int	set_first_name(std::string first_name);
+		int	set_last_name(std::string last_name);
+		int	set_nickname(std::string nickname);
+		int set_phone_number(std::string phone_number);
+		int set_darkest_secret(std::string darkest_secret);
+		void	show_contact();
+		Contact(){};
 
 };
 
