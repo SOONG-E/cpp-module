@@ -8,11 +8,14 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void){
-	time_t pre_time = time(NULL);
-	struct tm* t = localtime(&pre_time);
+	time_t now_time = time(NULL);
+	struct tm* t = localtime(&now_time);
 
-	std::cout << "[" << t->tm_year + 1990 << t->tm_mon + 1 << t->tm_mday \
-	<< "_" << t->tm_hour << t->tm_min << t->tm_sec << "] ";
+	std::cout << "[" ;
+	std::cout << (t->tm_year + 1900) * 10000 + (t->tm_mon + 1) * 100 + t->tm_mday;
+	std::cout << "_" ;
+	std::cout << t->tm_hour * 10000 + t->tm_min * 100 + t->tm_sec;
+	std::cout << "] ";
 }
 
 int	Account::getNbAccounts(void){
