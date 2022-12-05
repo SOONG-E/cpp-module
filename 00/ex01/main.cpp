@@ -8,7 +8,8 @@ int main()
 	
 	while (1){
 		check_stream();
-		std::cout << "MENU >> [ADD] [SEARCH] [EXIT] " << std::endl;
+		draw_division_line();
+		std::cout << "MENU >> [ADD] [SEARCH] [EXIT] " << std::endl << "👉";
 		std::cin >> temp;
 
 		temp = to_up(temp);

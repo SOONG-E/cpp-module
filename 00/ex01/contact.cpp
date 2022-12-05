@@ -36,8 +36,20 @@ int Contact::set_darkest_secret(std::string darkest_secret){
 	this->darkest_secret = darkest_secret;
 	return (0);
 }
-//배열로 바꿀까?!!!!!!!!?!?!?!?!?!?!!?!?!??!?!?!!?!?!?
 
-void	show_contact(){
+void	Contact::show_contact(){
+	print_info_short(first_name);
+	std::cout << "|";
+	print_info_short(last_name);
+	std::cout << "|";
+	print_info_short(nickname);
+	std::cout << std::endl;
+}
 
+void	Contact::show_detailed_contact(){
+	std::cout << "first name : " << first_name << std::endl;
+	std::cout << "last name : " << last_name << std::endl;
+	std::cout << "nickname : " << nickname << std::endl;
+	std::cout << "phone number : " << phone_number << std::endl;
+	std::cout << "darkest secret : " << darkest_secret << std::endl;
 }

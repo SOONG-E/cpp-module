@@ -19,6 +19,7 @@ class Contact
 		int set_phone_number(std::string phone_number);
 		int set_darkest_secret(std::string darkest_secret);
 		void	show_contact();
+		void	show_detailed_contact();
 		Contact(){};
 
 };

@@ -24,3 +24,20 @@ int	check_stream()
 		exit(1);
 	return (0);
 }
+
+void	print_info_short(std::string str)
+{
+	if (str.length() < 10){
+		std::cout << std::setw(10) << str ;
+		return ;
+	}
+	for (int i = 0; i < 9; ++i){
+		std::cout << str.at(i);
+	}
+	std::cout << ".";
+}
+
+void	draw_division_line()
+{
+	std::cout << "--------------------------------------" << std::endl ;
+}

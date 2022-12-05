@@ -4,6 +4,7 @@ void	PhoneBook::new_contact(){
 	std::string	ans;
 	idx = idx >= 8 ? 0 : idx;
 
+	draw_division_line();
 	do{
 		std::cout << "first name : ";
 		std::cin >> ans;
@@ -44,18 +45,42 @@ void	PhoneBook::new_contact(){
 }
 
 void	PhoneBook::show_book(){
+	draw_division_line();
 	std::cout << "📞 My Awesome PhoneBook 📖" << std::endl;
-	std::cout << "index" << "|" << "first name" << "|" << " last name" << "|" << " nickname" <<std:endl;
+	draw_division_line();
+	std::cout << "index" << "|" << "first name" << "|" << " last name" << "|" << " nickname" << std::endl;
 
 	for (int i = 0; i < num; ++i)
 	{
-		std::cout << std::setw(5) << i << "|";
+		std::cout << std::setw(5) << i + 1 << "|";
 		book[i].show_contact();
 	}
-
 }
 
 void	PhoneBook::search_book(){
-	show_book();
+	int	temp_idx;
 
+	if (!num){
+		std::cout << "no entry" << std::endl;
+		return ;
+	}
+	while (1)
+	{
+		show_book();
+		do {
+			check_stream();
+			std::cout << "type idx [1~" << num << " or 0 to EXIT] : ";
+			std::cin >> temp_idx;
+			if (std::cin.fail())
+			{
+				std::cin.clear();
+				std::cin.ignore(10000, '\n');	
+				continue;
+			}
+		}
+		while (temp_idx < 0 || temp_idx > num);
+		if (!temp_idx)
+			break ;
+		book[temp_idx - 1].show_detailed_contact();
+	}
 }
