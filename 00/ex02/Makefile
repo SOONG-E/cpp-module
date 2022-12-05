@@ -1,19 +1,20 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 
-SRCS =	
+SRCS =	test.cpp	\
+		Account.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all : account
+all : Account
 
-account : $(OBJS)
+Account : $(OBJS)
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) account
+	@$(RM) Account
 
 re : fclean
 	$(MAKE) all
