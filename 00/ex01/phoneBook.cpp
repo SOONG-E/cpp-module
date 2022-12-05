@@ -6,13 +6,13 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:54 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 17:27:55 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/05 20:02:45 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.h"
 
-void	PhoneBook::new_contact(){
+void	PhoneBook::addContact(){
 	std::string	ans;
 	idx = idx >= 8 ? 0 : idx;
 
@@ -22,41 +22,41 @@ void	PhoneBook::new_contact(){
 		std::cin >> ans;
 		check_stream();
 	}
-	while (book[idx].set_first_name(ans));
+	while (book[idx].setFirstName(ans));
 
 	do{
 		std::cout << "last name : ";
 		std::cin >> ans;
 		check_stream();
 	}
-	while (book[idx].set_last_name(ans));
+	while (book[idx].setLastName(ans));
 
 	do{
 		std::cout << "nickname : ";
 		std::cin >> ans;
 		check_stream();
 	}
-	while (book[idx].set_nickname(ans));
+	while (book[idx].setNickname(ans));
 
 	do{
 		std::cout << "phone number (only number) : ";
 		std::cin >> ans;
 		check_stream();
 	}
-	while (book[idx].set_phone_number(ans));
+	while (book[idx].setPhoneNumber(ans));
 
 	do{
 		std::cout << "darkest secret : ";
 		std::cin >> ans;
 		check_stream();
 	}
-	while (book[idx].set_darkest_secret(ans));
+	while (book[idx].setDarkestSecret(ans));
 	
 	++idx;
 	num = num < 8 ? ++num : num; 
 }
 
-void	PhoneBook::show_book(){
+void	PhoneBook::showBook(){
 	draw_division_line();
 	std::cout << "📞 My Awesome PhoneBook 📖" << std::endl;
 	draw_division_line();
@@ -65,11 +65,11 @@ void	PhoneBook::show_book(){
 	for (int i = 0; i < num; ++i)
 	{
 		std::cout << std::setw(5) << i + 1 << "|";
-		book[i].show_contact();
+		book[i].showContact();
 	}
 }
 
-void	PhoneBook::search_book(){
+void	PhoneBook::searchBook(){
 	int	temp_idx;
 
 	if (!num){
@@ -78,7 +78,7 @@ void	PhoneBook::search_book(){
 	}
 	while (1)
 	{
-		show_book();
+		showBook();
 		do {
 			check_stream();
 			std::cout << "type idx [1~" << num << " or 0 to EXIT] : ";
@@ -93,6 +93,6 @@ void	PhoneBook::search_book(){
 		while (temp_idx < 0 || temp_idx > num);
 		if (!temp_idx)
 			break ;
-		book[temp_idx - 1].show_detailed_contact();
+		book[temp_idx - 1].showDetailedContact();
 	}
 }

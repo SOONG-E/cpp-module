@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:52 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 17:27:53 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/05 20:02:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 
 		temp = to_up(temp);
 		if (temp == "ADD")
-			my_book.new_contact();
+			my_book.addContact();
 		else if (temp == "SEARCH")
-			my_book.search_book();
+			my_book.searchBook();
 		else if (temp == "EXIT")
 			break ;
 		else if (check_stream())

@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:49 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 17:27:50 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/05 20:01:52 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 class Contact
 {
 	private:
-		std::string	first_name;
-		std::string	last_name;
+		std::string	firstName;
+		std::string	lastName;
 		std::string	nickname;
-		std::string	phone_number;
-		std::string	darkest_secret;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 
 	public:
-		int	set_first_name(std::string first_name);
-		int	set_last_name(std::string last_name);
-		int	set_nickname(std::string nickname);
-		int set_phone_number(std::string phone_number);
-		int set_darkest_secret(std::string darkest_secret);
-		void	show_contact();
-		void	show_detailed_contact();
+		int		setFirstName(std::string firstName);
+		int		setLastName(std::string lastName);
+		int		setNickname(std::string nickname);
+		int 	setPhoneNumber(std::string phoneNumber);
+		int 	setDarkestSecret(std::string darkestSecret);
+		void	showContact();
+		void	showDetailedContact();
 		Contact(){};
 
 };

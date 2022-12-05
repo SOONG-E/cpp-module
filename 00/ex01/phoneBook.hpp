@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:58 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 17:27:59 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/05 20:02:45 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class PhoneBook{
 		Contact		book[8];
 
 	public:
-		void	new_contact();
-		void	search_book();
-		void	show_book();
+		void	addContact();
+		void	searchBook();
+		void	showBook();
 		PhoneBook() : num(0), idx(0) {};
 
 };
