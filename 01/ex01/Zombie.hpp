@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:56:46 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/06 15:56:47 by yujelee          ###   ########seoul.kr  */
+/*   Created: 2022/12/06 15:57:10 by yujelee           #+#    #+#             */
+/*   Updated: 2022/12/06 15:57:11 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 
-Zombie* newZombie(std::string name){
-	Zombie* ret =  new Zombie();
-	ret->setName(name);
-	return (ret);
-}
+class Zombie{
+
+	private :
+		std::string name;
+
+	public :
+		void		setName(std::string name);
+		void 		announce(void);
+		Zombie(){};
+		~Zombie();
+};

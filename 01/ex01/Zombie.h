@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:56:46 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/06 15:56:47 by yujelee          ###   ########seoul.kr  */
+/*   Created: 2022/12/06 15:56:32 by yujelee           #+#    #+#             */
+/*   Updated: 2022/12/06 15:56:33 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-Zombie* newZombie(std::string name){
-	Zombie* ret =  new Zombie();
-	ret->setName(name);
-	return (ret);
-}
+#include <iostream>
+#include "Zombie.hpp"
+
+Zombie* newZombie(std::string name);
+void 	randomChump(std::string name);
+
+#endif
