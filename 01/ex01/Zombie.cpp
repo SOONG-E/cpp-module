@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:57:07 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/06 15:57:08 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/06 16:08:48 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void	Zombie::setName(std::string name){
 	this->name = name;
 }
 
-void 	Zombie::announce(void)
-{
+void 	Zombie::announce(void){
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::Zombie(std::string name){
+	this->name = name;
 }
 
 Zombie::~Zombie(){

@@ -6,29 +6,17 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:57:00 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/06 15:57:01 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/06 16:13:56 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 
-void	yelling(Zombie *temp)
+void	bornZombie()
 {
-	temp->announce();
+	Zombie *a = zombieHorde(10, "hey");
 }
 
 int main(){
-	Zombie *a = newZombie("abc");
-	a->announce();
-
-	Zombie b;
-	b.setName("qwe");
-	b.announce();
-
-	randomChump("babo");
-
-	yelling(a);
-	yelling(&b);
-
-	delete(a);
+	bornZombie();
 }
