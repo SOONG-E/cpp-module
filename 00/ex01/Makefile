@@ -6,29 +6,29 @@
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 20:22:40 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/05 20:22:43 by yujelee          ###   ########seoul.kr   #
+#    Updated: 2022/12/07 19:48:37 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	phoneBook.cpp	\
-		contact.cpp		\
+SRCS =	PhoneBook.cpp	\
+		Contact.cpp		\
 		utils.cpp		\
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all : phoneBook
+all : PhoneBook
 
-phoneBook : $(OBJS)
+PhoneBook : $(OBJS)
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) phoneBook
+	@$(RM) PhoneBook
 
 re : fclean
 	$(MAKE) all

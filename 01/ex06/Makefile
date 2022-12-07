@@ -5,28 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/05 20:22:51 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/07 19:43:05 by yujelee          ###   ########seoul.kr   #
+#    Created: 2022/12/06 16:17:30 by yujelee           #+#    #+#              #
+#    Updated: 2022/12/07 19:56:31 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	test.cpp	\
-		Account.cpp
+SRCS =	main.cpp	\
+		Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all : Account
+all : harlFilter
 
-Account : $(OBJS)
+harlFilter : $(OBJS)
+	$(CC) $^ -o $@
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) Account
+	@$(RM) harlFilter
 
 re : fclean
 	$(MAKE) all

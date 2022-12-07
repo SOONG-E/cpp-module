@@ -6,12 +6,12 @@
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 15:57:05 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/06 15:57:06 by yujelee          ###   ########seoul.kr   #
+#    Updated: 2022/12/07 19:44:22 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	main.cpp		\
 		Zombie.cpp		\
