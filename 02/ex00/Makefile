@@ -6,7 +6,7 @@
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 16:17:30 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/07 20:17:22 by yujelee          ###   ########seoul.kr   #
+#    Updated: 2022/12/07 20:11:40 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,19 @@ CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	main.cpp	\
-		Harl.cpp
+		 Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all : Harl
+all : Fixed
 
-Harl : $(OBJS)
+Fixed : $(OBJS)
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) Harl
+	@$(RM) Fixed
 
 re : fclean
 	$(MAKE) all
