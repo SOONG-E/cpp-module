@@ -6,9 +6,12 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:38:45 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 16:38:49 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/07 20:16:44 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef STRING_HPP
+# define STRING_HPP
 
 #include <iostream>
 #include <fstream>
@@ -23,3 +26,5 @@ class String{
 	private :
 		std::string _str;
 };
+
+#endif

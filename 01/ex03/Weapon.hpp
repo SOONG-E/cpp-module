@@ -6,14 +6,14 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:42:05 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/06 19:07:02 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/07 20:17:05 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#ifndef WEAPON
-# define WEAPON
+#include <iostream>
 
 class Weapon{
 	public : 

@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/07 20:17:13 by yujelee           #+#    #+#             */
+/*   Updated: 2022/12/07 20:17:58 by yujelee          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
 
 class Harl {
@@ -13,6 +28,6 @@ class Harl {
 
 		std::string levels[4];
 		void (Harl::*funcs[4])(void);
-		
-
 };
+
+#endif
