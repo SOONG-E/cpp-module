@@ -1,10 +1,10 @@
 #include "Harl.hpp"
 
 Harl::Harl(){
-	levels[0] = "debug";
-	levels[1] = "info";
-	levels[2] = "warning";
-	levels[3] = "error";
+	levels[0] = "DEBUG";
+	levels[1] = "INFO";
+	levels[2] = "WARNING";
+	levels[3] = "ERROR";
 	funcs[0] = &Harl::debug;
 	funcs[1] = &Harl::info;
 	funcs[2] = &Harl::warning;
