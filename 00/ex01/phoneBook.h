@@ -6,12 +6,12 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:56 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 20:03:12 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/07 19:41:04 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
-#include "phoneBook.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
 

@@ -6,11 +6,11 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:47 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 20:01:52 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/07 19:40:51 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.h"
+#include "PhoneBook.h"
 
 int	Contact::setFirstName(std::string firstName){
 	if (!firstName.std::string::length())

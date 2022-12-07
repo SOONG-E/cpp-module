@@ -6,11 +6,11 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:54 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 20:02:45 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/07 19:40:59 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.h"
+#include "PhoneBook.h"
 
 void	PhoneBook::addContact(){
 	std::string	ans;
