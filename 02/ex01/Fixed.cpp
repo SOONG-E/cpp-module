@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 15:19:15 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 15:24:53 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void Fixed::setRawBits(int const raw){
 	_fixed = raw;
 }
 
-	#include <bitset>
 Fixed::Fixed(const int integer){
 	std::cout << "Int constructor called" << std::endl;
 	_fixed = (integer << 8);
