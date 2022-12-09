@@ -6,13 +6,13 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:38:43 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 19:46:52 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 21:06:05 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "String.hpp"
 
-std::string String::getString(){
+std::string String::getString() const {
 	return (_str);
 }
 

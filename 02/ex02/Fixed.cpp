@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 16:43:31 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 21:07:26 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,43 +50,43 @@ Fixed& 	Fixed::operator=(const Fixed &object){
 	return (*this);
 }
 
-bool Fixed::operator>(const Fixed &object){
+bool Fixed::operator>(const Fixed &object) const {
 	return (_fixed > object.getRawBits());
 }
 
-bool Fixed::operator<(const Fixed &object){
+bool Fixed::operator<(const Fixed &object) const {
 	return (_fixed < object.getRawBits());
 }
 
-bool Fixed::operator>=(const Fixed &object){
+bool Fixed::operator>=(const Fixed &object) const {
 	return (_fixed >= object.getRawBits());
 }
 
-bool Fixed::operator<=(const Fixed &object){
+bool Fixed::operator<=(const Fixed &object) const {
 	return (_fixed >= object.getRawBits());
 }
 
-bool Fixed::operator==(const Fixed &object){
+bool Fixed::operator==(const Fixed &object) const {
 	return (_fixed == object.getRawBits());
 }
 
-bool Fixed::operator!=(const Fixed &object){
+bool Fixed::operator!=(const Fixed &object) const {
 	return (_fixed != object.getRawBits());
 }
 
-Fixed Fixed::operator+(const Fixed &object){
+Fixed Fixed::operator+(const Fixed &object) const {
 	return (Fixed(toFloat() + object.toFloat()));
 }
 
-Fixed Fixed::operator-(const Fixed &object){
+Fixed Fixed::operator-(const Fixed &object) const {
 	return (Fixed(toFloat() - object.toFloat()));
 }
 
-Fixed Fixed::operator*(const Fixed &object){
+Fixed Fixed::operator*(const Fixed &object) const {
 	return (Fixed(toFloat() * object.toFloat()));
 }
 
-Fixed Fixed::operator/(const Fixed &object){
+Fixed Fixed::operator/(const Fixed &object) const {
 	return (Fixed(toFloat() / object.toFloat()));
 }
 
