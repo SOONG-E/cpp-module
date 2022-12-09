@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:20:47 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 21:50:37 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 15:04:43 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class Fixed {
 	public :
+		int 	getRawBits(void) const;
+		void 	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int 	toInt(void) const;
 		
@@ -26,11 +28,13 @@ class Fixed {
 		~Fixed();
 		Fixed(const Fixed &object);
 		Fixed& operator=(const Fixed &object);
+		Fixed& operator<<(const Fixed &object);
 
 	private :
-		int _integer;
-		float _floatingNum;
+		int _fixed;
 		static const int _fraction = 8;	
 };
+
+std::ostream& operator <<(std::ostream& outputStream, const Fixed& obj);
 
 #endif

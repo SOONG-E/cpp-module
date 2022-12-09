@@ -6,21 +6,41 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 21:50:36 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 15:19:15 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
-Fixed::Fixed(const int integer) : _integer(integer), _floatingNum(0){
+float	Fixed::toFloat(void) const{
+	return (float)(_fixed / 256.0);
+}
+
+int 	Fixed::toInt(void) const{
+	return (_fixed >> 8);
+}
+
+int  Fixed::getRawBits(void) const{
+	return (_fixed);
+}
+
+void Fixed::setRawBits(int const raw){
+	_fixed = raw;
+}
+
+	#include <bitset>
+Fixed::Fixed(const int integer){
 	std::cout << "Int constructor called" << std::endl;
+	_fixed = (integer << 8);
 }
 
-Fixed::Fixed(const float floatingNum) :_integer(0), _floatingNum(floatingNum) {
+Fixed::Fixed(const float floatingNum){
 	std::cout << "Float constructor called" << std::endl;
+	_fixed = roundf(floatingNum * 256);
 }
 
-Fixed::Fixed() : _integer(0), _floatingNum(0){
+Fixed::Fixed() : _fixed(0){
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -30,13 +50,11 @@ Fixed::~Fixed(){
 
 Fixed::Fixed(const Fixed &object){
 	std::cout << "Copy constructor called" << std::endl;
-	_integer = object._integer;
-	_floatingNum = object._floatingNum;
+	_fixed = object.getRawBits();
 }
 
 Fixed& 	Fixed::operator=(const Fixed &object){
 	std::cout << "Copy assignment operator called" << std::endl;
-	_integer = object._integer;
-	_floatingNum = object._floatingNum;
+	_fixed = object.getRawBits();
 	return (*this);
 }
