@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 20:38:21 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:44:45 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/09 21:49:51 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void ScavTrap::attack(const std::string& target){
 		setEnergy(getEnergy() - 1);
 		std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getDamage() <<" points of damage!" << std::endl;
 	}
+}
+
+void ScavTrap::guardGate(){
+	std::cout << "ScavTrap " << getName() << " is in Gate keeper mode now." << std::endl;
 }
 
 ScavTrap::ScavTrap() : ClapTrap("unknown", 100, 50, 20){
