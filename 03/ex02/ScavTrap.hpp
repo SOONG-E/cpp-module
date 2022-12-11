@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 20:38:26 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:46:51 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/11 23:50:31 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class ScavTrap : public ClapTrap {
 		void 	guardGate();
 	
 	private :
-
 };
 
 #endif
