@@ -1,0 +1,8 @@
+.vscode
+exe.sh
+*.txt
+*.DSYM
+*Tester*
+*.sh
+*.out
+*.dSYM
