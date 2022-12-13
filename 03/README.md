@@ -50,10 +50,15 @@ ScavTrap class와 FragTrap class를 상속받는 DiamondTrap class를 생성한�
 **진행**
 
 - 생성자 함수를 구현할 때 ClapTrap() 의존성을 적으면 에러가 발생한다.
-	- 다이아몬드 상속이지만 사실 ScavTrap이 상속받은 ClapTrap과 FragTrap이 상속받은 ClapTrap이 동시에 존재하여 Y모양의 상속이 된다.
-	- FragTrap과 ScavTrap이 ClapTrap을 virtual 상속으로 상속받아 모호성을 제거한다.
+	- 상속받은 클래스가 상속받은 클래스의 생성자 함수는 호출할 수 없다. (기존)
+	- 가상 상속을 하면 파생 함수도 기본 클래스의 생성자 함수를 호출할 수 있다.
 
--  자식 클래스에 부모 클래스와 같은 이름의 멤버 변수, 함수를 선언해도된다.
-	- 가상 상속을 받아 가상 테이블을 이용해 같은 이름의 멤버들에 접근하기때문에 같은 이름인(함수라면 인수까지 같은 경우) 멤버가 존재해도 모호성없이 접근, 호출할 수 있다.
+- 다이아몬드 상속이지만 사실 ScavTrap이 상속받은 ClapTrap과 FragTrap이 상속받은 ClapTrap이 동시에 존재하여 Y모양의 상속이 된다.
+	- ClapTrap의 멤버에 접근하는 경우 어느쪽 ClapTrap의 멤버에 접근하는 지에 대한 모호함이 생긴다.
+		- FragTrap과 ScavTrap이 ClapTrap을 virtual 상속으로 상속받아 모호성을 제거한다.
+		- 가상 테이블을 이용하여 ClapTrap의 멤버에 접근하므로 모호성을 제거할 수 있다.
+	
 
-- DiamondTrap의 기본 생성자 함수가 호출하는 ClapTrap class의 생성자 함수와 FragTrap or ScavTrap의 기본 생성자 함수가 호출하는 ClapTrap class의 생성자 함수가 다른 경우 +
+- 가상 상속을 받은 경우 DiamondTrap은 ClapTrap class의 생성자 함수를 한번만 호출할 수 있다.
+	- ScavTrap이나 FragTrap에서 중복으로 호출하지않게 주의해야한다.
+	- DiamondTrap와 ScavTrap(FragTrap)에서 ClapTrap의 다른 생성자 함수를 호출하는 경우 DiamondTrap에서 이미 생성자 함수를 호출했기때문에 ScavTrap(FragTrap)에서 호출한 생성자 함수는 호출되지않는다. 기대한 대로 작동되도록 주의하여 작성해야한다.
