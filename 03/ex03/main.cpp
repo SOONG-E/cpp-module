@@ -6,27 +6,33 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:27:51 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 22:17:16 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 15:20:41 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
-	FragTrap me("hihi");
-	FragTrap you("you");
-	FragTrap t(me);
-	FragTrap z = you;
+	DiamondTrap i;
 
-	me.attack("you");
-	you.takeDamage(me.getDamage());
-	me.attack("you");
-	you.takeDamage(me.getDamage());
-	me.attack("t");
-	t.takeDamage(me.getDamage());
-	you.beRepaired(10);
-	me.attack("you");
-	you.takeDamage(me.getDamage());
+	// DiamondTrap me("hihi");
+	// DiamondTrap you("you");
+	// DiamondTrap t(me);
+	// DiamondTrap z = you;
 
-	me.highFivesGuys();
+	// std::cout << "\nconstructor\n" << std::endl;
+	
+	// me.attack("you");
+	// you.takeDamage(me.getDamage());
+	// me.attack("you");
+	// you.takeDamage(me.getDamage());
+	// me.attack("t");
+	// t.takeDamage(me.getDamage());
+	// you.beRepaired(10);
+	// me.attack("you");
+	// you.takeDamage(me.getDamage());
+
+	i.whoAmI();
+
+	std::cout << "\ndestructor\n" << std::endl;
 }

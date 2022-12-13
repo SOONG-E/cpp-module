@@ -6,7 +6,7 @@
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 16:17:30 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/12 12:05:54 by yujelee          ###   ########seoul.kr   #
+#    Updated: 2022/12/13 12:56:35 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,15 @@ SRCS =	main.cpp		\
 		
 OBJS = $(SRCS:.cpp=.o)
 
-all : FragTrap
+all : DiamondTrap
 
-FragTrap : $(OBJS)
+DiamondTrap : $(OBJS)
 
 clean : 
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) FragTrap
+	@$(RM) DiamondTrap
 
 re : fclean
 	$(MAKE) all

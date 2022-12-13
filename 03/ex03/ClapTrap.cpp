@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:27:56 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:41:06 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 14:13:38 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,16 @@ void ClapTrap::setDamage(int damage){
 }
 
 ClapTrap::ClapTrap() : _name("unknown"), _hit(10), _energy(10), _damage(0) {
-	std::cout << "ClapTrap " << _name << " is  created! " << std::endl;
+	std::cout << "ClapTrap default" << _name << " is  created! " << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _damage(0) {
-	std::cout << "ClapTrap " << _name << " is  created! " << std::endl;
+	std::cout << "ClapTrap with name" << _name << " is  created! " << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hit, int energy, int damage) : \
 _name(name), _hit(hit), _energy(energy), _damage(damage){
-	std::cout << "ClapTrap " << _name << " is  created! " << std::endl;
+	std::cout << "ClapTrap with whole parameter" << _name << " is  created! " << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &obj){

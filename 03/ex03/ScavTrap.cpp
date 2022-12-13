@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 20:38:21 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:49:51 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 14:13:54 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void ScavTrap::guardGate(){
 }
 
 ScavTrap::ScavTrap() : ClapTrap("unknown", 100, 50, 20){
-	std::cout << "ScavTrap " << getName() << " is  created! " << std::endl;
+	std::cout << "ScavTrap  default" << getName() << " is  created! " << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
-	std::cout << "ScavTrap " << getName() << " is  created! " << std::endl;
+	std::cout << "ScavTrap with name" << getName() << " is  created! " << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap &obj) : ClapTrap(obj.getName(), obj.getHit(), obj.getEnergy(), obj.getDamage()){
-	std::cout << "ScavTrap " << getName() << " is  created! " << std::endl;
+	std::cout << "ScavTrap copy" << getName() << " is  created! " << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap& obj){
