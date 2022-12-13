@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:27:53 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:29:10 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 11:21:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ClapTrap{
 		void	setEnergy(int energy);
 		void	setDamage(int damage);
 	
-	private :
+	protected :
 		std::string _name;
 		int			_hit;
 		int			_energy;

@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 20:38:26 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:46:51 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 11:25:12 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ class ScavTrap : public ClapTrap {
 		ScavTrap& operator=(ScavTrap& obj);
 		void 	attack(const std::string& target);
 		void 	guardGate();
-	
-	private :
-
 };
 
 #endif

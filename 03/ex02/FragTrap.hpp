@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:11:40 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 22:17:44 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 11:25:17 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ class FragTrap : public ClapTrap {
 		FragTrap& operator=(FragTrap& obj);
 		~FragTrap();
 		void highFivesGuys();
-
 };
