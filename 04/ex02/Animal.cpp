@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:34:02 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/14 07:47:08 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/14 19:23:20 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::Animal(): type("hey"){
 }
 
 Animal::Animal(Animal& obj){
-	std::cout << "create Animal" << std::endl;
+	std::cout << "asdasd create Animal" << std::endl;
 	type = obj.type;
 }
 
