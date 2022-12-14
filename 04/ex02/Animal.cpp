@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:34:02 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/14 19:23:20 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/14 19:40:57 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 std::string Animal::getType() const {
 	return (type);
-}
-
-void Animal::makeSound() const {
-	std::cout << "haha!" << std::endl;
 }
 
 Animal::Animal(): type("hey"){
