@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:27:56 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 14:13:38 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/15 21:13:57 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void ClapTrap::setDamage(int damage){
 	_damage = damage;
 }
 
-ClapTrap::ClapTrap() : _name("unknown"), _hit(10), _energy(10), _damage(0) {
+ClapTrap::ClapTrap() : _name("unknown"), _hit(CLAP_HIT), _energy(CLAP_ENERGY), _damage(CLAP_DAMAGE) {
 	std::cout << "ClapTrap default" << _name << " is  created! " << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _damage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit(CLAP_HIT), _energy(CLAP_ENERGY), _damage(CLAP_DAMAGE) {
 	std::cout << "ClapTrap with name" << _name << " is  created! " << std::endl;
 }
 

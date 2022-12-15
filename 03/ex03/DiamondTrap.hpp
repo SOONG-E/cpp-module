@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:04:54 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 14:36:22 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/15 19:18:09 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 		DiamondTrap& operator=(DiamondTrap& obj);
 		~DiamondTrap();
 		void	whoAmI();
-		void	attack(const std::string& target);
 		
 	protected :
 		std::string 	_name;

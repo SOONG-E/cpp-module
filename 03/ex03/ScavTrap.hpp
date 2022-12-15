@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 20:38:26 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 12:54:24 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/15 21:13:07 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 #include "ClapTrap.hpp"
 
+#define SCAV_HIT	100
+#define SCAV_ENERGY	50
+#define SCAV_DAMAGE	20
+
 class ScavTrap : virtual public ClapTrap {
 	public :
 		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap(int energy);
 		ScavTrap(ScavTrap &obj);
 		~ScavTrap();
 		ScavTrap& operator=(ScavTrap& obj);

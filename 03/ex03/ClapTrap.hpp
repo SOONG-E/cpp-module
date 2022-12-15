@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:27:53 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 11:23:03 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/15 21:14:02 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+
+#define CLAP_HIT	10
+#define CLAP_ENERGY	10
+#define CLAP_DAMAGE	0
 
 class ClapTrap{
 	public :

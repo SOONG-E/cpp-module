@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:15:13 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 14:14:15 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/15 21:16:23 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@ void FragTrap::highFivesGuys(){
 	std::cout << "highFivesGuys !!" << std::endl;
 }
 
-FragTrap::FragTrap() : ClapTrap("unknown", 100, 100, 30){
+FragTrap::FragTrap() : ClapTrap("unknown", FRAG_HIT, FRAG_ENERGY, FRAG_DAMAGE){
 	std::cout << "FragTrap default" << getName() << " is  created! " << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name, FRAG_HIT, FRAG_ENERGY, FRAG_DAMAGE) {
 	std::cout << "FragTrap with name" << getName() << " is  created! " << std::endl;
+}
+
+FragTrap::FragTrap(int hit, int damage) : ClapTrap() {
+	std::cout << "FragTrap with hit and damage" << getName() << " is  created! " << std::endl;
+	_hit = hit;
+	_damage = damage;
 }
 
 FragTrap::FragTrap(FragTrap &obj) : ClapTrap(obj.getName(), obj.getHit(), obj.getEnergy(), obj.getDamage()){
