@@ -62,3 +62,12 @@ ScavTrap class와 FragTrap class를 상속받는 DiamondTrap class를 생성한�
 - 가상 상속을 받은 경우 DiamondTrap은 ClapTrap class의 생성자 함수를 한번만 호출할 수 있다.
 	- ScavTrap이나 FragTrap에서 중복으로 호출하지않게 주의해야한다.
 	- DiamondTrap와 ScavTrap(FragTrap)에서 ClapTrap의 다른 생성자 함수를 호출하는 경우 DiamondTrap에서 이미 생성자 함수를 호출했기때문에 ScavTrap(FragTrap)에서 호출한 생성자 함수는 호출되지않는다. 기대한 대로 작동되도록 주의하여 작성해야한다.
+
+- attack() 함수 내부에서 ScavTrap::attack() 호출했다.
+	- ScavTrap생성자가 ClapTrap생성자보다 나중에 호출돼서 DiamondTrap클래스는 ScavTrap의 attack()을 호출하므로 DiamondTrap은 attack()을 오버라이딩 하지않아도 된다.
+
+- ScavTrap class 생성자 초기화 리스트에 부모 클래스에게 상속받은 변수를 올리니 에러가 발생했다.
+	```
+	"_hit" is not a nonstatic data member or base class of class "ScavTrap"
+	```
+	- 상속받은 변수는 초기화 리스트에 올릴 수 없다.
