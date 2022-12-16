@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:25:55 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/16 16:18:34 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 17:27:40 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(150){
 	setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &obj) : Bureaucrat(obj.getName(), obj.getGrade()){}
+Bureaucrat::Bureaucrat(Bureaucrat &obj) : _name(obj.getName()), _grade(obj.getGrade()){}
 
 Bureaucrat::~Bureaucrat(){}
 
@@ -42,14 +42,22 @@ int Bureaucrat::getGrade() const{
 void Bureaucrat::setGrade(int grade){
 	try{
 		if (grade < 1)
-			throw std::out_of_range("Bureaucrat::GradeTooHighException");
+			throw GradeTooHighException();
 		else if (grade > 150)
-			throw std::out_of_range("Bureaucrat::GradeTooLowException");
+			throw GradeTooLowException();
 		_grade = grade;
 	}
-	catch (std::out_of_range& e){
+	catch (std::exception& e){
 		std::cout << e.what() << std::endl;
 	}
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw(){
+	return ("Grade is too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw(){
+	return ("Grade is too low");
 }
 
 std::ostream& operator <<(std::ostream& outputStream, const Bureaucrat& obj){
