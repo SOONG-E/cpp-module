@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:20:47 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 15:31:59 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 14:36:53 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+
 
 class Fixed {
 	public :

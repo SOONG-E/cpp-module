@@ -6,21 +6,11 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 21:32:21 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 19:18:29 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 14:36:16 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-
-std::ostream& operator <<(std::ostream& outputStream, const Fixed& obj){
-	if ((obj.getRawBits() & 0xff) > 0){
-		std::cout << obj.toFloat();
-		
-		return outputStream;
-	}
-	std::cout << obj.toInt();
-	return outputStream;
-}
 
 int main( void ) {
 	Point A(2, 2);

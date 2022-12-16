@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:07:26 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 14:35:47 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,3 +150,12 @@ const Fixed& Fixed::min(const Fixed &obj1, const Fixed &obj2){
 	return (obj1.getRawBits() < obj2.getRawBits() ? obj1 : obj2);
 }
 
+std::ostream& operator <<(std::ostream& outputStream, const Fixed& obj){
+	if ((obj.getRawBits() & 0xff) > 0){
+		std::cout << obj.toFloat();
+		
+		return outputStream;
+	}
+	std::cout << obj.toInt();
+	return outputStream;
+}

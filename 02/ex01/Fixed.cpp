@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 15:24:53 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 14:35:07 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,14 @@ Fixed& 	Fixed::operator=(const Fixed &object){
 	std::cout << "Copy assignment operator called" << std::endl;
 	_fixed = object.getRawBits();
 	return (*this);
+}
+
+std::ostream& operator <<(std::ostream& outputStream, const Fixed& obj){
+	if ((obj.getRawBits() & 0xff) > 0){
+		std::cout << obj.toFloat();
+		
+		return outputStream;
+	}
+	std::cout << obj.toInt();
+	return outputStream;
 }

@@ -6,21 +6,11 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 21:32:21 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 17:24:24 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/16 14:35:14 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-std::ostream& operator <<(std::ostream& outputStream, const Fixed& obj){
-	if ((obj.getRawBits() & 0xff) > 0){
-		std::cout << obj.toFloat();
-		
-		return outputStream;
-	}
-	std::cout << obj.toInt();
-	return outputStream;
-}
 
 int main( void ) {
 
