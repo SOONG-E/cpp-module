@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:38:40 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 16:38:41 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/19 14:33:54 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ int main(int ac, char **av)
 		str.replace(s1, s2);
 		fout << str.getString() << std::endl;
 	}
+	fin.close();
+	fout.close();
 }
