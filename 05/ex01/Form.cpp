@@ -6,13 +6,13 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:30:33 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 13:31:38 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/19 14:19:18 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("unknown"), _signGrade(1), _executeGrade(1), _isSigned(false){}
+Form::Form() : _name("unknown"), _signGrade(0), _executeGrade(0), _isSigned(false){}
 
 Form::Form(std::string name, int signGrade, int executeGrade): _name(name), _signGrade(1 <= signGrade && signGrade <= 150 ? signGrade : 0),\
  _executeGrade(1 <= executeGrade && executeGrade <= 150 ? executeGrade : 0), _isSigned(false)
