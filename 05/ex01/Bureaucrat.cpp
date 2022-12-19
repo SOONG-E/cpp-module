@@ -6,12 +6,11 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:25:55 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 13:20:31 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/19 13:31:40 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <stdexcept>
 
 Bureaucrat::Bureaucrat() : _name("unknown"), _grade(150){}
 
