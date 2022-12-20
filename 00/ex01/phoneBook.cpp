@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:54 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/15 17:01:17 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/20 17:47:23 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,40 @@
 void	PhoneBook::addContact(){
 	std::string	ans;
 	idx = idx >= 8 ? 0 : idx;
-
+	
+	std::cin.ignore();
 	draw_division_line();
 	do{
 		std::cout << "first name : ";
-		std::cin >> ans;
+		std::getline(std::cin, ans);
 		check_stream();
 	}
 	while (book[idx].setFirstName(ans));
 
 	do{
 		std::cout << "last name : ";
-		std::cin >> ans;
+		std::getline(std::cin, ans);
 		check_stream();
 	}
 	while (book[idx].setLastName(ans));
 
 	do{
 		std::cout << "nickname : ";
-		std::cin >> ans;
+		std::getline(std::cin, ans);
 		check_stream();
 	}
 	while (book[idx].setNickname(ans));
 
 	do{
 		std::cout << "phone number (only number) : ";
-		std::cin >> ans;
+		std::getline(std::cin, ans);
 		check_stream();
 	}
 	while (book[idx].setPhoneNumber(ans));
 
 	do{
 		std::cout << "darkest secret : ";
-		std::cin >> ans;
+		std::getline(std::cin, ans);
 		check_stream();
 	}
 	while (book[idx].setDarkestSecret(ans));

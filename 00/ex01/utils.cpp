@@ -6,11 +6,27 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:28:00 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/07 19:41:11 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/20 16:13:55 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.h"
+
+std::string trim(std::string str)
+{
+	int i;
+	for (i = 0; i < (int)str.length(); ++i){
+		if (!isspace(str.at(i)))
+			break ;
+	}
+	str.erase(0, i);
+	for (i = (int)str.length() - 1; i >= 0; --i){
+		if (!isspace(str.at(i)))
+			break ;
+	}
+	str.erase(i + 1, str.length() - i + 1);
+	return (str);
+}
 
 std::string to_up(std::string str)
 {

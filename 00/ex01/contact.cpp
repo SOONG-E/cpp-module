@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:47 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/15 17:01:03 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/20 16:13:15 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.h"
 
 int	Contact::setFirstName(std::string firstName){
+	firstName = trim(firstName);
 	if (!firstName.std::string::length())
 		return (1);
 	this->firstName = firstName;
@@ -20,6 +21,7 @@ int	Contact::setFirstName(std::string firstName){
 }
 
 int	Contact::setLastName(std::string lastName){
+	lastName = trim(lastName);
 	if (!lastName.std::string::length())
 		return (1);
 	this->lastName = lastName;
@@ -27,6 +29,7 @@ int	Contact::setLastName(std::string lastName){
 }
 
 int	Contact::setNickname(std::string nickname){
+	nickname = trim(nickname);
 	if (!nickname.std::string::length())
 		return (1);
 	this->nickname = nickname;
@@ -34,6 +37,7 @@ int	Contact::setNickname(std::string nickname){
 }
 
 int Contact::setPhoneNumber(std::string phoneNumber){
+	phoneNumber = trim(phoneNumber);
 	if (!phoneNumber.std::string::length())
 		return (1);
 	else if (is_all_digit(phoneNumber))
@@ -43,6 +47,7 @@ int Contact::setPhoneNumber(std::string phoneNumber){
 }
 
 int Contact::setDarkestSecret(std::string darkestSecret){
+	darkestSecret = trim(darkestSecret);
 	if (!darkestSecret.std::string::length())
 		return (1);
 	this->darkestSecret = darkestSecret;
