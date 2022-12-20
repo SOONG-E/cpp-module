@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 20:22:22 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/05 20:22:23 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/20 15:12:02 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void){
-	time_t now_time = time(NULL);
-	struct tm* t = localtime(&now_time);
+	char 		s[19];
+	time_t 		now_time;
+	struct tm 	*timeptr;
 
-	std::cout << "[" ;
-	std::cout << (t->tm_year + 1900) * 10000 + (t->tm_mon + 1) * 100 + t->tm_mday;
-	std::cout << "_" ;
-	std::cout << t->tm_hour * 10000 + t->tm_min * 100 + t->tm_sec;
-	std::cout << "] ";
+	now_time = time(NULL);
+	timeptr = localtime(&now_time);
+	strftime(s, sizeof(s),"[%Y%m%d_%H%M%S] ", timeptr);
+	std::cout << s;
 }
 
 int	Account::getNbAccounts(void){
