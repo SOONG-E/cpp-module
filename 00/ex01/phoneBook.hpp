@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:58 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/15 17:01:26 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/22 13:21:26 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class PhoneBook{
 		void	addContact();
 		void	searchBook();
 		void	showBook();
+		std::string	getString(std::string attr);
 		PhoneBook() : num(0), idx(0) {};
 
 };

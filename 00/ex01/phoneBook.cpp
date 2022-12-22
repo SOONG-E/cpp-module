@@ -6,55 +6,39 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:27:54 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/20 17:47:23 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2022/12/22 13:34:05 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.h"
 
+std::string PhoneBook::getString(std::string attr){
+	std::string	ans;
+	
+	std::cout << attr << " : ";
+	std::getline(std::cin, ans);
+	check_stream();
+	return (ans);
+}
+
 void	PhoneBook::addContact(){
 	std::string	ans;
-	idx = idx >= 8 ? 0 : idx;
 	
 	std::cin.ignore();
 	draw_division_line();
-	do{
-		std::cout << "first name : ";
-		std::getline(std::cin, ans);
-		check_stream();
-	}
-	while (book[idx].setFirstName(ans));
 
-	do{
-		std::cout << "last name : ";
-		std::getline(std::cin, ans);
-		check_stream();
-	}
-	while (book[idx].setLastName(ans));
+	while (book[idx].setFirstName(getString("first name")));
 
-	do{
-		std::cout << "nickname : ";
-		std::getline(std::cin, ans);
-		check_stream();
-	}
-	while (book[idx].setNickname(ans));
+	while (book[idx].setLastName(getString("last name")));
 
-	do{
-		std::cout << "phone number (only number) : ";
-		std::getline(std::cin, ans);
-		check_stream();
-	}
-	while (book[idx].setPhoneNumber(ans));
+	while (book[idx].setNickname(getString("nickname")));
 
-	do{
-		std::cout << "darkest secret : ";
-		std::getline(std::cin, ans);
-		check_stream();
-	}
-	while (book[idx].setDarkestSecret(ans));
+	while (book[idx].setPhoneNumber(getString("phone number (only number)")));
+
+	while (book[idx].setDarkestSecret(getString("darkest secret")));
 	
-	++idx;
-	num = num < 8 ? ++num : num; 
+	idx = ++idx >= 8 ? 0 : idx;
+	num = num < 8 ? ++num : num;
 }
 
 void	PhoneBook::showBook(){
