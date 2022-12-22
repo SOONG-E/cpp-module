@@ -57,4 +57,6 @@ int main(){
 
 	identify(test);
 	identify(*test);
+
+	delete test;
 }
