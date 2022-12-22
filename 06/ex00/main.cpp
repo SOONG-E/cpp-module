@@ -6,8 +6,8 @@
 bool print_specific(float f){
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " <<  f << std::endl;
-	std::cout << "double: " <<  f << std::endl;
+	std::cout << "float: " << f << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << std::endl;
 
 	return (true);
 }
