@@ -12,7 +12,7 @@ name과 grade(1~150)을 멤버 변수로 갖는 Bureaucrat 클래스를 작성�
 	- 서브젝트에서 exception class는 Orthodox Canonical Form을 지키지 않아도 된다고 적혀있어 구현해야한다는 것을 알게됐다..
 		- 클래스 내부에 std::exception클래스를 상속받은 GradeTooHighException, GradeTooLowException를 구현한 뒤 what()함수를 오버라이딩하여 예외를 throw한다.
 
-- Bureaucrat을 스트림으로 출력했을 때 출력될 문구를 operator <<()함수를 오버라이딩하여 출력한다.
+- Bureaucrat을 스트림으로 출력했을 때 출력될 문구를 operator <<()함수를 오버로딩하여 출력한다.
 
 - 생성할 때부터 잘못된 값이 들어올 경우에는 파라미터로 초기화하기 전 가장 낮은 grade인 150으로 초기화를 먼저 진행한다.
 
