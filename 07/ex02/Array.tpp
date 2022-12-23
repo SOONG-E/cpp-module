@@ -9,16 +9,18 @@ Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n){}
 template <class T>
 Array<T>::Array(Array &obj){
 	_array = new T[obj.size()];
-	for (int i = 0; i < obj.size(); ++i)
+	for (unsigned int i = 0; i < obj.size(); ++i)
 		_array[i] = obj[i]; 
+	_size = obj.size();
 }
 
 template <class T>
 Array<T>& Array<T>::operator=(const Array &obj){
 	delete [] _array;
 	_array = new T[obj.size()];
-	for (int i = 0; i < obj.size(); ++i)
+	for (unsigned int i = 0; i < obj.size(); ++i)
 		_array[i] = obj[i]; 
+	_size = obj.size();
 	return (*this);
 }
 
@@ -29,6 +31,7 @@ unsigned int Array<T>::size(){
 
 template <class T>
 T& Array<T>::operator[](unsigned int idx){
+	// std::cout << idx << " " << _size;
 	if (idx < 0 || idx >= _size)
 		throw std::exception();
 	return (_array[idx]);
