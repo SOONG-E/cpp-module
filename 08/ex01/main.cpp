@@ -13,9 +13,9 @@ int main(){
 	std::vector<int> temp(4, 100);
 	for (std::vector<int>::iterator it = temp.begin() ; it != temp.end(); ++it)
 		std::cout << *it << " ";
-	// sp.addNumber(temp);
-	// std::cout << sp.shortestSpan() << std::endl;
-	// std::cout << sp.longestSpan() << std::endl;
+	sp.addNumber(temp);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 
 	return 0;
 }

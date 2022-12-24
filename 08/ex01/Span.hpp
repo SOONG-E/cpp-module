@@ -12,9 +12,9 @@ class Span{
 		Span& operator=(Span &obj);
 		~Span();
 		void addNumber(int num);
-		// void addNumber(std::vector<int> dummy);
-		// int shortestSpan();
-		// int longestSpan();
+		void addNumber(std::vector<int> dummy);
+		int shortestSpan();
+		int longestSpan();
 
 	private :
 		std::vector<int>		_spots;
