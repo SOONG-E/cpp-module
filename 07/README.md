@@ -1,26 +1,52 @@
-const는 상수화라는 의미입니다.
-위의 경우 const Point& a 라고 지정하면, a의 레퍼런스 대상을 변경할 수 없게 한다라는 뜻이 됩니다.
+### ex00
 
-2. call by value vs. call by reference
-call by value 방식의 값 전달은 값을 복사해서 전달합니다.
-주의: 클래스 오브젝트의 call by value 전달을 위해서는 필히 복사생성자(Copy Constructor)를 구현해야만 합니다.
-인자 전달 후, 원본 값과 전혀 별개의 개체임으로 함수안에서 값을 변경해도, 원본 인자에 영향을 주지 않습니다.
-call by reference 방식의 값 전달은 원본의 값의 그대로 사용하며, 참조만 전달합니다. (C에서는 포인터로 이를 흉내내었으나, C++에서는 별도로 제공합니다.)
-원본을 전달하기 때문에, 함수안에서 개체에 조작을 행한경우, 함수 종료후에도 그 영향이 남아있게 됩니다.
-위 설명에서 본 것과 같이 값을 복사하는 행위가 없기 때문에 call by refernce가 call by value보다 빠릅니다.
-https://qna.programmers.co.kr/questions/2212/c-const-reference-%EB%B3%80%EC%88%98%EC%99%80-%EA%B7%B8%EB%83%A5-%EB%B3%80%EC%88%98%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90
+**개요**
 
+어떤 타입이 파라미터로 전달돼도 작동하는 swap(), min(), max()함수를 구현한다.
+
+**진행**
+
+- Function templates을 이용해 모든 타입에 대한 함수를 반복적으로 구현하지 않고 한번만 작성한다.
+- 어떤 타입을 파라미터로 넣어도 잘 작동하는 지 확인한다.
 
 
-해석하면 template 클래스(혹은 함수)는 컴파일 타임에 인스턴스화되는데(링크 타임이 아니라), cpp파일은 link-time에 다른 cpp파일들을 인지할 수 있다. 헤더파일은 #include 덕분에 컴파일타임에 알려지게 된다. 그래서 헤더파일에 선언과 구현이 모두 있어야 하는것이다.
-https://welikecse.tistory.com/40
- 
+***
 
-템플릿 클래스(혹은 함수)를 헤더파일과 cpp파일로 나눠서 선언, 구현을 따로 작성하려면 할 수는 있다. 템플릿 클래스를 사용하는 파일(위의 나의 코드 예시에선 main.cpp)에서 템플릿 클래스가 구현된 Template.cpp파일을 include해주면 된다.
+### ex01
 
-https://learn.microsoft.com/ko-kr/cpp/cpp/function-template-instantiation?view=msvc-170
+**개요**
 
-함수포인ㅌ어 https://reakwon.tistory.com/17
+iter()함수에 파라미터로 보낸 배열과 함수 포인터를 이용해 배열의 모든 원소가 함수를 호출하도록 한다.
+iter()함수는 어떤 타입이나 파라미터로 전달받을 수 있다.
 
-scope ::
-https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=tipsware&logNo=221056751962
+**진행**
+- 파라미터로 전달받은 배열의 길이 len과 for문을 이용해 len만큼 배열의 원소가 파라미터로 받은 함수를 호출하도록 한다.
+- 어떤 타입이 파라미터로 전달돼도 잘 작동되게 Function templates을 이용한다.
+- 파라미터로 const값이 전달돼도 잘 작동되게 함수 포인터의 반환 타입과 배열의 타입에 const를 붙인다.
+	- const	타입이 아닌 타입을 const타입으로 implict cast는 할 수 있지만 const타입을 아닌 타입으로 implict cast를 할 수는 없다.
+- iter()함수의 반환 타입이 void라 원소가 호출하는 함수의 반환 타입도 const로 지정했다.
+
+***
+
+### ex02
+
+**개요**
+
+new 키워드를 이용해 배열을 생성하고 배열에 관한 정보를 갖는 Array 클래스를 구현한다.
+
+**진행**
+
+- []를 이용해 배열의 원소에 접근이 가능해야한다.
+	- operator[]를 오버로딩하여 접근이 가능하게한다.
+
+- 복사 생성자와 대입 연산자를 호출할 때 깊은 복사가 되도록한다.
+	- 포인터를 대입하지않고 원소의 값을 복사하여 깊은 복사를 한다.
+
+- 배열의 크기를 저장하여 size()함수를 호출할 때 크기를 반환해주고, 배열의 범위를 벗어날 때 예외를 throw한다.
+	- 배열의 크기를 멤버 변수로 저장한다.
+	- 배열에 접근할 때 배열의 범위를 벗어나는 지 체크한다.
+
+- 클래스 구현은 .tpp파일에서 한다.
+	- 클래스 선언을 해둔 .hpp 파일 하단에 .tpp파일을 include한다.
+	- .tpp파일에선 .hpp파일은 include하지않아도된다.
+		- 컴파일 과정에서 합쳐진다.
