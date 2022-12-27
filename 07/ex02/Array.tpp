@@ -1,5 +1,3 @@
-// #include "Array.hpp"
-
 template <class T>
 Array<T>::Array() : _array(new T[0]), _size(0){}
 
@@ -31,7 +29,6 @@ unsigned int Array<T>::size(){
 
 template <class T>
 T& Array<T>::operator[](unsigned int idx){
-	// std::cout << idx << " " << _size;
 	if (idx < 0 || idx >= _size)
 		throw std::exception();
 	return (_array[idx]);
