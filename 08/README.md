@@ -19,3 +19,5 @@
 
 N개의 unsigned int타입을 저장하는 Span 클래스를 구현한다.
 멤버 함수로 원소들 중 가장 짧은 거리를 반환하는 shortestSpan()와 가장 긴 거리를 반환하는 longestSpan()를 가진다.
+
+**진행**
