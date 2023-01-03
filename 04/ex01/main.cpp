@@ -6,11 +6,10 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:42:58 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 19:19:48 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 16:14:48 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
