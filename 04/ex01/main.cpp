@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:42:58 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/03 16:14:48 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 16:20:38 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main(){
 
 	l[0].makeSound();
 	l[1].makeSound();
+	std::cout << l[0].getType() << std::endl;
+	std::cout << l[1].getType() << std::endl;
 
 	delete [] l;
 
