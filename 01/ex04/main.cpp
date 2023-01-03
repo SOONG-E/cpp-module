@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:38:40 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 14:33:54 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 12:35:46 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main(int ac, char **av)
 	std::ifstream fin(filename);
 	std::ofstream fout(filename + ".replace");
 
-	if (!fin.is_open() || !fout.is_open())
+	if (fin.is_open() == false || fout.is_open() == false)
 		return (1);
-	while (!fin.eof()){
+	while (fin.eof()== false){
 		std::getline(fin, temp);
 		String	str(temp);
 		str.replace(s1, s2);
