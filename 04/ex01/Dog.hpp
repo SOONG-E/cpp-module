@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:39:51 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/13 19:04:49 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 20:22:25 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class Dog : public Animal{
 		Dog& operator=(Dog& obj);
 		~Dog();
 		void makeSound() const;
+		std::string		getBrainCell() const;
+		void			setBrainCell(std::string str);
+		Brain *brain;
 
 	private : 
-		Brain *brain;
 };
 
 #endif

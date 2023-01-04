@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 16:38:26 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/04 16:52:23 by yujelee          ###   ########seoul.kr  */
+/*   Created: 2023/01/03 19:55:22 by yujelee           #+#    #+#             */
+/*   Updated: 2023/01/04 16:52:27 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-void	Cat::makeSound() const{
-	std::cout << "myao~" << std::endl;
-}
-
-Cat::Cat(){
-	std::cout << "create Cat" << std::endl;
-	brain = new Brain();
-	type = "cat";
-}
-
-Cat::Cat(Cat& obj){
-	brain = new Brain();
+Brain::Brain(){
 	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
-	type = obj.type;
-	std::cout << "create Cat" << std::endl;
+		ideas[i] = "...";
 }
 
-Cat& Cat::operator=(Cat& obj){
+Brain::Brain(std::string str){
 	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
-	type = obj.type;
+		ideas[i] = str;
+}
+
+Brain::Brain(Brain &obj){
+	for (int i = 0; i < 100; ++i)
+		ideas[i] = obj.ideas[i];
+}
+
+Brain& Brain::operator=(Brain &obj){
+	for (int i = 0; i < 100; ++i)
+		ideas[i] = obj.ideas[i];
 	
 	return (*this);
 }
 
-Cat::~Cat(){
-	std::cout << "destroy Cat" << std::endl;
-	delete brain;
+std::string		Brain::getBrainCell(int idx) const{
+	return (ideas[idx]);
 }
+
+void	Brain::setBrainCell(int idx, std::string str){
+	if (idx >= 0 && idx < 100)
+	ideas[idx] = str;
+}
+
+Brain::~Brain(){}
