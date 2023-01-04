@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:20:47 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/16 14:37:06 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 21:56:27 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed {
 		Fixed(const float floatingNum);
 		~Fixed();
 		Fixed(const Fixed &object);
-		Fixed& operator=(const Fixed &object);
+		const Fixed& operator=(const Fixed &object);
 		bool operator>(const Fixed &object) const ;
 		bool operator<(const Fixed &object) const ;
 		bool operator>=(const Fixed &object) const ;

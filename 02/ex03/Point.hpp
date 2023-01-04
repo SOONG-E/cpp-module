@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:09:18 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 19:18:41 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/04 16:15:50 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@
 class Point{
 	public :
 		Point();
-		Point(const Fixed x, const Fixed y);
+		Point(const float x, const float y);
+		~Point();
+		float getX() const;
+		float getY() const;
 		Point(const Point& obj);
 		Point& operator=(const Point& obj);
-		~Point();
-		float getX();
-		float getY();
 		
 	private :
-		Fixed x;
-		Fixed y;
+		Fixed const x;
+		Fixed const y;
+		
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);

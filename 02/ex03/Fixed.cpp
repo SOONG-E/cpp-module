@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 20:21:17 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/16 14:36:22 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/03 21:59:04 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Fixed::Fixed(const Fixed &object){
 	_fixed = object.getRawBits();
 }
 
-Fixed& 	Fixed::operator=(const Fixed &object){
+const Fixed& Fixed::operator=(const Fixed &object){
 	_fixed = object.getRawBits();
 	return (*this);
 }

@@ -6,33 +6,28 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:18:23 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/09 19:07:36 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/04 16:21:31 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-float Point::getX(){
+float Point::getX() const {
 	return (x.toFloat());
 }
 
-float Point::getY(){
+float Point::getY() const {
 	return (y.toFloat());
 }
 
 Point::Point() : x(Fixed(0)), y(Fixed(0)) {};
 
-Point::Point(const Fixed x, const Fixed y) :x(x), y(y){};
+Point::Point(const float x, const float y) :x(Fixed(x)), y(Fixed(y)){};
 
-Point::Point(const Point& obj){
-	x.setRawBits(obj.x.getRawBits());
-	y.setRawBits(obj.y.getRawBits());
-}
+Point::Point(const Point& obj) : x(obj.x), y(obj.y){}
 
 Point& Point::operator=(const Point& obj){
-	x.setRawBits(obj.x.getRawBits());
-	y.setRawBits(obj.y.getRawBits());
-
+	(void)obj;
 	return (*this);
 }
 
