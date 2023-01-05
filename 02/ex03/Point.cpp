@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:18:23 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/04 16:21:31 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/05 19:28:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Point::Point(const float x, const float y) :x(Fixed(x)), y(Fixed(y)){};
 Point::Point(const Point& obj) : x(obj.x), y(obj.y){}
 
 Point& Point::operator=(const Point& obj){
-	(void)obj;
+	*this = Point(obj);
 	return (*this);
 }
 
