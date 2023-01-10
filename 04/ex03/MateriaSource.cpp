@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:40:24 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/10 13:37:36 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 13:44:54 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,17 @@ MateriaSource::MateriaSource(MateriaSource &obj){
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource &obj){
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i){
+		delete source[i];
 		source[i] = obj.source[i];
-
-		return (*this);
+	}
+	return (*this);
 }
 
-MateriaSource::~MateriaSource(){}
+MateriaSource::~MateriaSource(){
+	for (int i = 0; i < 4; ++i)
+		delete source[i];
+}
 
 void MateriaSource::learnMateria(AMateria* m){
 	for (int i = 0; i < 4; ++i){
@@ -48,7 +52,9 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 			break;
 		}
 	}
-	if (i == 4)
+	if (i == 4){
+		std::cout << "you didn't learn this Materia" << std::endl;		
 		return (0);
+	}
 	return (source[i]->clone());
 }
