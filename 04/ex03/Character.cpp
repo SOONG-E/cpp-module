@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:40:00 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/14 21:40:01 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 13:34:27 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::Character(std::string name){
 	initInventory();
 }
 
-Character::Character(Character	&obj){
+Character::Character(Character &obj){
 	name = obj.name;
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = obj.inventory[i];
@@ -34,13 +34,18 @@ Character::Character(Character	&obj){
 
 Character& Character::operator=(Character &obj){
 	name = obj.name;
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i){
+		delete inventory[i];
 		inventory[i] = obj.inventory[i];
+	}
 
 	return (*this);
 }
 
-Character::~Character(){}
+Character::~Character(){
+	for (int i = 0; i < 4; ++i)
+		delete inventory[i];
+}
 
 std::string const & Character::getName() const{
 	return (name);
@@ -48,7 +53,7 @@ std::string const & Character::getName() const{
 
 void Character::equip(AMateria* m){
 	for (int i = 0; i < 4; ++i){
-		if (!inventory[i]){
+		if (inventory[i] == NULL){
 			inventory[i] = m;
 			break;
 		}
