@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:40:24 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/14 21:40:25 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/10 13:37:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ MateriaSource::~MateriaSource(){}
 
 void MateriaSource::learnMateria(AMateria* m){
 	for (int i = 0; i < 4; ++i){
-		if (!source[i]){
+		if (source[i] == NULL){
 			source[i] = m;
 			break;
 		}
