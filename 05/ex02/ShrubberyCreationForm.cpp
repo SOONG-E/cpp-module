@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:08:42 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 16:03:47 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 15:04:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::construct() const{
 	std::ofstream fout(getName() + "_shrubbery");
+	if (fout.is_open() == false)
+		return ;
 	for (int i = 1; i < 10; ++i){
 		for (int j = 10 - i; j > 0 ; --j)
 			fout << " ";
