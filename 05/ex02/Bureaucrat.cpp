@@ -6,16 +6,16 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:25:55 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 14:04:38 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:52:38 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <stdexcept>
 
-Bureaucrat::Bureaucrat() : _name("unknown"), _grade(150){}
+Bureaucrat::Bureaucrat() : _name("unknown"), _grade(1){}
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(150){
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(1){
 	setGrade(grade);
 }
 
