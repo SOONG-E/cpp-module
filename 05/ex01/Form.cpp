@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:30:33 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 15:42:15 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 15:10:30 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Form::Form(Form &obj) : _name(obj.getName()), _signGrade(obj.getSignGrade()), _e
 Form::~Form(){}
 
 void Form::beSigned(Bureaucrat &bureaucrat){
-	if (!_signGrade || !_executeGrade){
+	if (_signGrade == 0 || _executeGrade == 0){
 		std::cout << "rewrite form! " << std::endl;
 		return ;
 	}
