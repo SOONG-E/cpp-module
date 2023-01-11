@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:00:55 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/11 16:38:14 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:41:25 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 
 AForm::AForm() : _name("unknown"), _signGrade(0), _executeGrade(0), _isSigned(false){}
 
-AForm::AForm(std::string name, int signGrade, int executeGrade): _name(name), _signGrade(1 <= signGrade && signGrade <= 150 ? signGrade : 0),\
- _executeGrade(1 <= executeGrade && executeGrade <= 150 ? executeGrade : 0), _isSigned(false)
- {
+AForm::AForm(std::string name, int signGrade, int executeGrade): _name(name)
+																, _signGrade(1 <= signGrade && signGrade <= 150 ? signGrade : 0)
+																, _executeGrade(1 <= executeGrade && executeGrade <= 150 ? executeGrade : 0)\
+																, _isSigned(false){
 	checkGrade(signGrade);
 	checkGrade(executeGrade);
- }
+}
 
-AForm::AForm(AForm &obj) : _name(obj.getName()), _signGrade(obj.getSignGrade()), _executeGrade(obj.getExecuteGrade()), _isSigned(false){}
+AForm::AForm(AForm &obj) : _name(obj.getName())
+							, _signGrade(obj.getSignGrade())
+							, _executeGrade(obj.getExecuteGrade())
+							, _isSigned(false){}
 
 AForm::~AForm(){}
 
