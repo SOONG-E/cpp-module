@@ -6,14 +6,14 @@
 #    By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 16:17:30 by yujelee           #+#    #+#              #
-#    Updated: 2022/12/21 19:47:54 by yujelee          ###   ########seoul.kr   #
+#    Updated: 2023/01/11 17:06:54 by yujelee          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp	Type.cpp
 		
 OBJS = $(SRCS:.cpp=.o)
 
