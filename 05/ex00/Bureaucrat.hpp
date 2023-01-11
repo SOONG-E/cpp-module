@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:25:58 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/16 17:23:14 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 14:56:10 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ class Bureaucrat {
 		Bureaucrat& operator=(Bureaucrat &obj);
 
 	class GradeTooHighException : public std::exception {
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 	
 	class GradeTooLowException : public std::exception {
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 };
 

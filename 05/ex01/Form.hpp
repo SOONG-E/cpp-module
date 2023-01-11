@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:30:31 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 13:30:32 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 14:56:16 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ class Form {
 		Form& operator=(Form &obj);
 	
 	class GradeTooHighException : public std::exception {
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 };
 
