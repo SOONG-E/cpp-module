@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:30:33 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/11 16:37:50 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:50:29 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,14 @@ const char* Form::GradeTooLowException::what() const throw(){
 }
 
 std::ostream& operator <<(std::ostream& outputStream, const Form& obj){
-	std::cout << "name : " <<obj.getName();
-	std::cout << "grade required to sign : " << obj.getSignGrade();
-	std::cout << "grade required to execute : " << obj.getExecuteGrade();
-	std::cout << "signed : " << obj.getIsSigned();
+	std::cout << "name : " << obj.getName() << std::endl;
+	if (obj.getSignGrade() == 0 || obj.getExecuteGrade() == 0){
+		std::cout << "* needed to rewrite *" << std::endl;
+		return outputStream;
+	}
+	std::cout << "grade required to sign : " << obj.getSignGrade() << std::endl;
+	std::cout << "grade required to execute : " << obj.getExecuteGrade() << std::endl;
+	std::cout << "signed : " << (obj.getIsSigned() ? "True" : "False");
 	
 	return outputStream;
 }
