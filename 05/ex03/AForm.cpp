@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:00:55 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 16:00:56 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:38:36 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void AForm::beSigned(Bureaucrat &bureaucrat){
 		std::cout << "rewrite form! " << std::endl;
 		return ;
 	}
-	if (bureaucrat.getGrade() > _signGrade)
+	if (bureaucrat.getGrade() < _signGrade)
 		throw GradeTooLowException();
 	_isSigned = true;
 }
@@ -43,7 +43,7 @@ bool AForm::execute(Bureaucrat const & executor) const{
 	}
 	if (!_isSigned)
 		throw GradeTooLowException();
-	if (executor.getGrade() > _executeGrade)
+	if (executor.getGrade() < _executeGrade)
 		throw GradeTooLowException();
 	construct();
 	return (true);
