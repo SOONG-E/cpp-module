@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:39:49 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 15:46:55 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:51:43 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,17 @@ int main(){
 	RobotomyRequestForm w("W home");
 	PresidentialPardonForm e("E");
 
-
-	std::cout << q.getSignGrade() << " " << q.getExecuteGrade() <<std::endl;
-	std::cout << w.getSignGrade() << " " << w.getExecuteGrade() <<std::endl;
-	std::cout << e.getSignGrade() << " " << e.getExecuteGrade() <<std::endl;
+	std::cout << q <<std::endl;
+	std::cout << w <<std::endl;
+	std::cout << e <<std::endl <<std::endl;
 	
-	a.signForm(q);
-	a.signForm(w);
-	a.signForm(e);
+	c.signForm(q);
+	c.signForm(w);
+	c.signForm(e);
+
+	std::cout << q <<std::endl;
+	std::cout << w <<std::endl;
+	std::cout << e <<std::endl <<std::endl;
 
 	a.executeForm(q);
 	b.executeForm(q);

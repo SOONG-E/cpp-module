@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:39:49 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 14:19:36 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/11 16:44:57 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ int main(){
 	Form b("B house", 70, 80);
 	Form c("C house", 80, 80);
 
+	std::cout << q << std::endl;
+	std::cout << x << std::endl;
+	std::cout << xx << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	
 	a.signForm(q);
 	a.signForm(x);
 	a.signForm(xx);
