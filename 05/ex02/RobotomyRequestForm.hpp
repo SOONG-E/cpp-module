@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:01:26 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 16:03:40 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/12 21:54:06 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class RobotomyRequestForm : public AForm{
 		RobotomyRequestForm(std::string name);
 		RobotomyRequestForm(RobotomyRequestForm &obj);
 		~RobotomyRequestForm();
+		bool	execute(Bureaucrat const & executor) const;
 		void	construct() const ;
 		
 	private :

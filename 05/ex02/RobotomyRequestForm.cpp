@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:01:24 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 17:22:52 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/12 21:54:45 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ void RobotomyRequestForm::construct() const{
 		return ;
 	}
 	std::cout << getName() << " : robotomy failed" << std::endl;
+}
+
+bool RobotomyRequestForm::execute(Bureaucrat const & executor) const{
+	if (_signGrade == 0 || _executeGrade == 0){
+		std::cout << "rewrite form! " << std::endl;
+		return false;
+	}
+	if (_isSigned == false)
+		throw GradeTooLowException();
+	if (executor.getGrade() < _executeGrade)
+		throw GradeTooLowException();
+	construct();
+	return (true);
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm &obj){

@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:08:39 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 16:03:50 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/12 21:54:15 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ShrubberyCreationForm : public AForm{
 		ShrubberyCreationForm(std::string name);
 		ShrubberyCreationForm(ShrubberyCreationForm &obj);
 		~ShrubberyCreationForm();
+		bool	execute(Bureaucrat const & executor) const;
 		void	construct() const ;
 		
 	private :

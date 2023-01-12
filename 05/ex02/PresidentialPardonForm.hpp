@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:01:22 by yujelee           #+#    #+#             */
-/*   Updated: 2022/12/19 16:03:18 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/12 21:54:08 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PresidentialPardonForm : public AForm{
 		PresidentialPardonForm(std::string name);
 		PresidentialPardonForm(PresidentialPardonForm &obj);
 		~PresidentialPardonForm();
+		bool	execute(Bureaucrat const & executor) const;
 		void	construct() const ;
 		
 	private :
