@@ -25,6 +25,7 @@ class Type {
 		char		*_str;
 
 	private :
+		double		_strAsDouble;
 		double		_valueAsDouble;
 		int			_valueAsInt;
 		char		_valueAsChar;

@@ -11,13 +11,21 @@ Type::Type() : _type(UNDEFINED){}
 Type::Type(Type &obj){
 	_str = obj._str;
 	_type = obj._type;
+	_valueAsChar = obj._valueAsChar;
+	_valueAsInt = obj._valueAsInt;
+	_valueAsFloat = obj._valueAsFloat;
 	_valueAsDouble = obj._valueAsDouble;
+	_strAsDouble = obj._strAsDouble;
 }
 
 Type& Type::operator=(Type &obj){
 	_str = obj._str;
 	_type = obj._type;
+	_valueAsChar = obj._valueAsChar;
+	_valueAsInt = obj._valueAsInt;
+	_valueAsFloat = obj._valueAsFloat;
 	_valueAsDouble = obj._valueAsDouble;
+	_strAsDouble = obj._strAsDouble;
 
 	return (*this);
 }
@@ -34,9 +42,11 @@ Type::Type(char *str): _string(std::string(str)), _str(str){
 }
 
 int Type::getType(){
-	if (_string == "-inff" || _string == "+inff" || _string == "inff" || _string == "nanf")
+	if (_string[0] == '-' || _string[0] == '+')
+		_string.erase(0,1);
+	if (_string == "inff" || _string == "nanf")
 		return (FLOAT);
-	if (_string == "-inf" || _string == "+inf" || _string == "inf" || _string == "nan" )
+	if (_string == "inf" || _string == "nan" )
 		return (DOUBLE);
 	if (isdigit(_string[0]) == false && _string.length() > 1)
 		return (UNDEFINED);
@@ -47,18 +57,18 @@ int Type::getType(){
 		if (isdigit(*it) == false)
 			++num_nonnumeric;
 	}
-	if (num_nonnumeric == 1 && _string.find(".") != std::string::npos)
+	if (num_nonnumeric == 1 && _string.find(".") != std::string::npos && _string.at(_string.length() - 1) != '.')
 		return (DOUBLE);
 	if (num_nonnumeric == 2 && _string.find(".") != std::string::npos && 
-		_string.at(_string.length() - 1) == 'f')
+		_string.at(_string.length() - 1) == 'f' && _string.at(_string.length() - 2) != '.')
 		return (FLOAT);
-	if (num_nonnumeric > 1)
+	if (num_nonnumeric > 0)
 		return (UNDEFINED);
 	return (INT);
 }
 
 void Type::convertToActualType(){
-	_valueAsDouble = std::strtod(_str, NULL);
+	_strAsDouble = std::strtod(_str, NULL);
 
 	switch (_type){
 	case CHAR :
@@ -80,6 +90,7 @@ void Type::convertToActualType(){
 		_valueAsDouble = static_cast<double>(_valueAsFloat);
 		break;
 	case DOUBLE :
+		_valueAsDouble = std::strtod(_str, NULL);
 		_valueAsChar = static_cast<char>(_valueAsDouble);
 		_valueAsInt = static_cast<int>(_valueAsDouble);
 		_valueAsFloat = static_cast<float>(_valueAsDouble);
@@ -100,11 +111,11 @@ void Type::makeConversion(){
 
 void Type::toChar(){
 	std::cout << "char : " ;
-	if (isinf(_valueAsDouble) == true || isnan(_valueAsDouble)){
+	if (isinf(_strAsDouble) == true || isnan(_strAsDouble) == true ){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	if (CHAR_MIN > _valueAsDouble || _valueAsDouble > CHAR_MAX){
+	if (CHAR_MIN > _strAsDouble || _strAsDouble > CHAR_MAX){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -121,11 +132,11 @@ void Type::toChar(){
 
 void Type::toInt(){
 	std::cout << "int : ";
-	if (isinf(_valueAsDouble) == true || isnan(_valueAsDouble)){
+	if (isinf(_strAsDouble) == true || isnan(_strAsDouble) == true ){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	if (_valueAsDouble > INT_MAX || _valueAsDouble < INT_MIN){
+	if (_strAsDouble > INT_MAX || _strAsDouble < INT_MIN){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -134,27 +145,36 @@ void Type::toInt(){
 
 void Type::toFloat(){
 	std::cout << "float : " ;
-	if (isinf(_valueAsDouble) == true){
+	if (isinf(_strAsDouble) == true || isnan(_strAsDouble) == true ){
 		std::cout << _valueAsFloat;
 		std::cout << "f" << std::endl;
 		return ;
 	}
-	if (_valueAsDouble > FLT_MAX || _valueAsDouble < FLT_MIN){
+	if ((_strAsDouble > 0 && _valueAsFloat < 0) || (_strAsDouble < 0 && _valueAsFloat > 0)){
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	if (_strAsDouble > FLT_MAX || _strAsDouble < FLT_MIN){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
 	std::cout << _valueAsFloat ;
-	if (_valueAsFloat == std::roundf(_valueAsFloat))
+	if (_strAsDouble == std::roundf(_strAsDouble))
 		std::cout << ".0";
 	std::cout << "f" << std::endl;
 }
 
 void Type::toDouble(){
-	std::cout << "double : " << _valueAsDouble;
-	if (isinf(_valueAsDouble) == true){
-		std::cout << _valueAsDouble;
+	std::cout << "double : ";
+	if ((_strAsDouble > 0 && _valueAsDouble < 0) || (_strAsDouble < 0 && _valueAsDouble > 0)){
+		std::cout << "impossible" << std::endl;
 		return ;
 	}
+	if (isinf(_valueAsDouble) == true){
+		std::cout << _valueAsDouble << std::endl;
+		return ; 
+	}
+	std::cout << _valueAsDouble ;
 	if (_valueAsDouble == std::roundf(_valueAsDouble))
 		std::cout << ".0";
 	std::cout << std::endl;
