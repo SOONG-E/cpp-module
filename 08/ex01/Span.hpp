@@ -1,7 +1,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <vector>
+#include <set>
 #include <iostream>
 
 class Span{
@@ -12,13 +12,13 @@ class Span{
 		Span& operator=(Span &obj);
 		~Span();
 		void addNumber(int num);
-		void addNumber(std::vector<int> dummy);
+		void addNumber();
 		int shortestSpan();
 		int longestSpan();
 
 	private :
-		std::vector<int>		_spots;
-		std::vector<int>::size_type	_maxAmount;
+		std::set<int>		_spots;
+		std::set<int>::size_type	_maxAmount;
 
 };
 
