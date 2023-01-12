@@ -6,12 +6,14 @@ scalar 값을 입력으로 받아 char, int, float, double 타입으로 변환�
 
 **진행**
 
-- strtof()함수를 이용해 string을 float으로 변환한다.
-	- static_cast로는 string을 다른 값으로 변환할 수 없다.
-- isnan(), isinf()함수를 이용해 nan, inf, -inf값을 구분한다.
-	- int 타입에 inf값이 들어오면 MIN_INT값을 가지게된다.
-	- isinf()반환값이 true인 경우 impossible이라고 명시해준다. (서브젝트에 맞게 출력한다.)
-- static_cast를 이용해 float타입을 다른 타입으로 cast한다.
+- 서브젝트에 원래 타입을 감지한 후, 원래의 타입으로 변환하고, 변한 값을 explicitly 하게 변환하라고 명시돼있다.
+	- 입력값을 파싱하여 입력값의 타입이 뭔지 감지한다.
+	- 생성자에서 감지한 타입을 이용해 다른 값으로 변환하는 함수를 호출한다.
+- 오버플로우나 이상한 값이 들어오면 유저에게 변환이 불가능하다고 알려야 한다.
+	- 이상한 값인 경우 파싱 중에 감지하여 conversion때 불가능하다고 알린다.
+	- 가장 큰 범위를 표현할 수 있는 double타입의 변수를 이용해 본 값을 저장한 뒤, 다른 타입의 값들과 비교하여 오버플로우/언더플로우가 생겼는 지 확인한다.
+- isnan()/isinf() 함수를 사용하여 nan, inf값이 들어왔는 지 확인한다.
+- char의 경우 isprint(), isascii()함수를 이용하여 Non displayable, impossible을 구분한다.
 
 ****
 
