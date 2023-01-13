@@ -31,22 +31,14 @@ void Span::addNumber(int num){
 int	getRandomInt(int n){
 	(void)n;
 
-	srand(time(NULL));
-
 	return (rand());
 }
 
 void Span::addNumber(){
+	srand(time(NULL));
 	std::vector<int> temp(_maxAmount, 1);
-	for (std::vector<int>::iterator it = temp.begin(); it != temp.end(); ++it)
-		std::cout << *it << " " << std::endl;
-	std::vector<int> temp2(1,1);
 	_spots.clear();
-	std::transform(temp.begin(), temp.end(), temp.begin(), getRandomInt);
-	std::set<int> Q(temp.begin(), temp.end());
-	for (std::set<int>::iterator it = Q.begin(); it != Q.end(); ++it)
-		std::cout << *it << " ." << std::endl;
-	_spots = Q;
+	std::transform(temp.begin(), temp.end(), std::inserter(_spots, _spots.begin()), getRandomInt);
 };
 
 int Span::shortestSpan(){
