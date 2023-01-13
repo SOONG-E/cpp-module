@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Type.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/13 15:00:10 by yujelee           #+#    #+#             */
+/*   Updated: 2023/01/13 15:00:12 by yujelee          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Type.hpp"
 #include <cctype>
 #include <cmath>
@@ -57,10 +69,10 @@ int Type::getType(){
 		if (isdigit(*it) == false)
 			++num_nonnumeric;
 	}
-	if (num_nonnumeric == 1 && _string.find(".") != std::string::npos && _string.at(_string.length() - 1) != '.')
+	if (num_nonnumeric == 1 && _string.find(".") != std::string::npos && *_string.rbegin() != '.')
 		return (DOUBLE);
 	if (num_nonnumeric == 2 && _string.find(".") != std::string::npos && 
-		_string.at(_string.length() - 1) == 'f' && _string.at(_string.length() - 2) != '.')
+		*_string.rbegin() == 'f' && _string.at(_string.length() - 2) != '.')
 		return (FLOAT);
 	if (num_nonnumeric > 0)
 		return (UNDEFINED);
@@ -150,11 +162,11 @@ void Type::toFloat(){
 		std::cout << "f" << std::endl;
 		return ;
 	}
-	if ((_strAsDouble > 0 && _valueAsFloat < 0) || (_strAsDouble < 0 && _valueAsFloat > 0)){
-		std::cout << "impossible" << std::endl;
+	if ((_strAsDouble > 0 && _valueAsFloat < 0)){
+		std::cout << "Aimpossible" << std::endl;
 		return ;
 	}
-	if (_strAsDouble > FLT_MAX || _strAsDouble < FLT_MIN){
+	if ((_strAsDouble != 0 && _valueAsFloat == 0)){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -166,7 +178,11 @@ void Type::toFloat(){
 
 void Type::toDouble(){
 	std::cout << "double : ";
-	if ((_strAsDouble > 0 && _valueAsDouble < 0) || (_strAsDouble < 0 && _valueAsDouble > 0)){
+	if ((_strAsDouble > 0 && _valueAsDouble < 0)){
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	if ((_strAsDouble != 0 && _valueAsDouble == 0)){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}

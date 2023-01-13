@@ -1,4 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Type.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/13 14:59:52 by yujelee           #+#    #+#             */
+/*   Updated: 2023/01/13 15:00:40 by yujelee          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
+
+#ifndef TYPE_HPP
+#define TYPE_HPP
 
 #define CHAR 0
 #define INT 1
@@ -14,7 +29,6 @@ class Type {
 		Type &operator=(Type &obj);
 		~Type();
 		int		getType();
-		void	convertToActualType();
 		void	makeConversion();
 		void	toChar();
 		void	toInt();
@@ -25,9 +39,12 @@ class Type {
 		char		*_str;
 
 	private :
+		void		convertToActualType();
 		double		_strAsDouble;
 		double		_valueAsDouble;
 		int			_valueAsInt;
 		char		_valueAsChar;
 		float		_valueAsFloat;
 };
+
+#endif
