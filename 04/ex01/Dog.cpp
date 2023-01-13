@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:40:09 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/04 16:28:47 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/13 15:25:00 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ Dog::Dog(){
 
 Dog::Dog(Dog& obj){
 	brain = new Brain();
-	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
+	*brain = *obj.brain;
 	type = obj.type;
 	std::cout << "create Dog" << std::endl;
 }
 
 Dog& Dog::operator=(Dog& obj){
-	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
+	*brain = *obj.brain;
 	type = obj.type;
 
 	return (*this);

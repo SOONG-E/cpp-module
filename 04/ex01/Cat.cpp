@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:38:26 by yujelee           #+#    #+#             */
-/*   Updated: 2023/01/04 16:52:23 by yujelee          ###   ########seoul.kr  */
+/*   Updated: 2023/01/13 15:25:08 by yujelee          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ Cat::Cat(){
 
 Cat::Cat(Cat& obj){
 	brain = new Brain();
-	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
+	*brain = *obj.brain;
 	type = obj.type;
 	std::cout << "create Cat" << std::endl;
 }
 
 Cat& Cat::operator=(Cat& obj){
-	for (int i = 0; i < 100; ++i)
-		brain->setBrainCell(i, obj.brain->getBrainCell(i));
+	*brain = *obj.brain;
 	type = obj.type;
 	
 	return (*this);
